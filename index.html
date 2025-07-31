@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Girlfriend's Day</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffc0cb;
+      height: 100vh;
+      overflow: hidden;
+      text-align: center;
+      color: white;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 6em;
+      margin-top: 100px;
+      text-shadow: 2px 2px 15px #ff69b4;
+    }
+
+    .hover-box {
+      position: relative;
+      display: inline-block;
+      margin: 30px;
+    }
+
+    .hover-button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      background: white;
+      color: #ff69b4;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 15px #fff;
+    }
+
+    .content-box {
+      visibility: hidden;
+      opacity: 0;
+      width: 300px;
+      background-color: #fff0f5;
+      color: #333;
+      text-align: left;
+      border-radius: 15px;
+      padding: 20px;
+      position: absolute;
+      z-index: 1;
+      top: 110%;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 0 20px #ff69b4;
+      transition: opacity 0.3s ease;
+    }
+
+    .hover-box:hover .content-box {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .proposal-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .proposal-buttons button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      background-color: #ff69b4;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .proposal-buttons button:hover {
+      transform: scale(1.1);
+      background-color: #ff8abf;
+    }
+
+    .heart {
+      position: fixed;
+      top: -10px;
+      color: #ff4e75;
+      font-size: 25px;
+      animation: fall 5s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-10px) rotate(0deg);
+        opacity: 0.9;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Music -->
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2023/03/15/audio_6d780640d3.mp3?filename=until-i-found-you-cover-144945.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Falling Hearts -->
+  <script>
+    for (let i = 0; i < 50; i++) {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+      heart.style.fontSize = (Math.random() * 20 + 20) + "px";
+      document.body.appendChild(heart);
+    }
+
+    function showPopup(message) {
+      alert(message);
+    }
+  </script>
+
+  <!-- Big I LOVE YOU -->
+  <h1>I LOVE YOU</h1>
+
+  <!-- Hover Box 1: Love Letter -->
+  <div class="hover-box">
+    <button class="hover-button">💌 Read My Letter</button>
+    <div class="content-box">
+      <h3>To My Love 💖</h3>
+      <p>
+        You are the light in my darkest days and the joy in my happiest moments. <br><br>
+        Every heartbeat whispers your name. I love you endlessly.<br><br>
+        Yours forever 💕
+      </p>
+    </div>
+  </div>
+
+  <!-- Hover Box 2: Proposal -->
+  <div class="hover-box">
+    <button class="hover-button">💍 A Little Question</button>
+    <div class="content-box" style="text-align: center;">
+      <h3>Will You Marry Me?</h3>
+      <img src="https://i.imgur.com/CLB3AVu.png" alt="Ring" style="width:80px; margin: 10px auto;">
+      <p style="margin-bottom: 10px;">You're my forever, my always, my everything. 💍</p>
+      <div class="proposal-buttons">
+        <button onclick="showPopup('Yay! I love you 💖')">YES</button>
+        <button onclick="showPopup('You made me the happiest! 💍')">Definitely YES</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
